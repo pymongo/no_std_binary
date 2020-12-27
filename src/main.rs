@@ -5,7 +5,9 @@
 // entry_point/start_address of process, since the linker looks for a function named `_start` by default
 #[no_mangle]
 pub extern "C" fn _start() -> ! {
-    loop {}
+    // mac: illegal hardware instruction
+    exit(0);
+    // loop {}
 }
 
 pub fn exit(code: isize) -> ! {
